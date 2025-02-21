@@ -1,0 +1,49 @@
+version: 1.0
+stages:
+  stage1:
+    jobs:
+    - - job1
+  stage2:
+    jobs:
+    - - job3
+      - job2
+  stage3:
+    jobs:
+    - - job4
+    - - job5
+jobs:
+  job1:
+    description: source cloning job
+    type: source-checkout
+    timeout: 30
+    priority: major
+    parameters:
+      branch: main
+  job3:
+    description: source cloning job
+    type: source-checkout
+    timeout: 30
+    priority: major
+    parameters:
+      branch: main
+  job2:
+    description: source cloning job
+    type: source-checkout
+    timeout: 30
+    priority: major
+    parameters:
+      branch: main
+  job4:
+    description: source cloning job
+    type: source-checkout
+    timeout: 30
+    priority: major
+    parameters:
+      branch: main
+  job5:
+    description: source cloning job
+    type: source-checkout
+    timeout: 30
+    priority: major
+    parameters:
+      branch: main
