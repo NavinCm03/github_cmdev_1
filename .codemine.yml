@@ -1,24 +1,14 @@
 version: 1.0
 stages:
-  stage1:
-    jobs:
-    - - job1
-  stage2:
-    jobs:
-    - - job3
-      - job2
-  stage3:
-    jobs:
-    - - job4
-    - - job5
-  stage4:
-    jobs:
-    - - job6
-    - - job7
+  - stage1
+  - stage2
+  - stage3
+  - stage4
 jobs:
   job1:
     description: source cloning job
     type: source-checkout
+    stage: stage1
     timeout: 30
     priority: major
     parameters:
@@ -26,6 +16,7 @@ jobs:
   job3:
     description: source cloning job
     type: source-checkout
+    stage: stage1
     timeout: 30
     priority: major
     parameters:
@@ -33,6 +24,7 @@ jobs:
   job2:
     description: source cloning job
     type: source-checkout
+    stage: stage2
     timeout: 30
     priority: major
     parameters:
@@ -40,6 +32,7 @@ jobs:
   job4:
     description: source cloning job
     type: source-checkout
+    stage: stage2
     timeout: 30
     priority: major
     parameters:
@@ -47,6 +40,7 @@ jobs:
   job5:
     description: source cloning job
     type: source-checkout
+    stage: stage3
     timeout: 30
     priority: major
     parameters:
@@ -54,6 +48,7 @@ jobs:
   job6:
     description: source cloning job
     type: source-checkout
+    stage: stage4
     timeout: 30
     priority: major
     parameters:
@@ -61,6 +56,7 @@ jobs:
   job7:
     description: source cloning job
     type: source-checkout
+    stage: stage4
     timeout: 30
     priority: major
     parameters:
